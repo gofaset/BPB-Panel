@@ -82,7 +82,7 @@ async function getUsage() {
 
 async function checkVersion(panelVersion) {
     try {
-        const res = await fetch('https://raw.githubusercontent.com/bia-pain-bache/BPB-Worker-Panel/refs/heads/main/package.json', {
+        const res = await fetch('https://raw.githubusercontent.com/gofaset/BPB-Panel/refs/heads/main/package.json', {
             cache: 'no-store'
         });
 
@@ -267,7 +267,7 @@ async function fetchIPInfo() {
 function generateSubUrl(type, core, tag) {
     const url = new URL(`./sub/${type}`, window.location.href);
     url.searchParams.append('app', core);
-    url.hash = `💦 BPB ${tag}`;
+    url.hash = ` BPB ${tag}`;
 
     if (core === 'sing-box' && type !== 'raw') {
         return `sing-box://import-remote-profile?url=${url.href}`;
@@ -871,7 +871,7 @@ function randPath() {
 async function updatePanel(btn) {
     const confirm = await notify('confirm', 'Update BPB Panel', [
         `BPB Panel verseion ${globalThis.latestVersion} is now available!`,
-        `Please read <a href='https://github.com/bia-pain-bache/BPB-Worker-Panel/releases/latest' target='_blank' rel='noopener noreferrer'>Release notes</a> carefully before updating.`,
+        `Please read <a href='https://github.com/gofaset/BPB-Panel/releases/latest' target='_blank' rel='noopener noreferrer'>Release notes</a> carefully before updating.`,
         'Are you sure?'
     ]);
 
